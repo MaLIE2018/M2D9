@@ -98,6 +98,18 @@
         }
         
         .tracklist-trash:hover {}
+        /*------------------------------------*\
+                #Modal
+        \*------------------------------------*/
+        
+        .modal-newTrack {
+            /* background-color: rgb(102, 98, 98) */
+        }
+        
+        .input {
+            color: black;
+            background-color: black;
+        }
     </style>
 </head>
 
@@ -157,7 +169,7 @@
                     </div>
                 </div>
                 <div class="tracklist album-tracklist row pl-5 py-3 m-0">
-                    <div class="col d-flex justify-content-center"><button type="button" class="btn btn tracklist-trash" data-toggle="modal" data-target="#newTrack"><ion-icon name="add-circle-outline"></ion-icon></button></div>
+                    <div class="col d-flex justify-content-center"><button type="button" class="btn tracklist-trash" data-toggle="modal" data-target="#newTrack"><ion-icon name="add-circle-outline"></ion-icon></button></div>
                 </div>
 
             </div>
@@ -207,7 +219,7 @@
         <!-- New Track modal start -->
         <div class="modal" id="newTrack" tabindex="-1">
             <div class="modal-dialog">
-                <div class="modal-content">
+                <div class="modal-content modal-newTrack">
                     <div class="modal-header">
                         <h5 class="modal-title">New Track</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -215,39 +227,42 @@
                   </button>
                     </div>
                     <div class="modal-body">
-                        <div class="container input-group mb-3">
-                            <div class="row">
-                                <div class="col-6">Number</div>
-                                <div class="col-6"><input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6">Name</div>
-                                <div class="col-6"><input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6">Length</div>
-                                <div class="col-6"><input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6">Featuring</div>
-                                <div class="col-6"><input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6">Live Track</div>
-                                <div class="col-6"><input type="radio" aria-label="Radio button for following text input"></div>
+                        <div class="input-group">
+                            <div class="container mb-3">
+                                <div class="row">
+                                    <div class="col-3">Number</div>
+                                    <div class="col-9"><input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-3">Name</div>
+                                    <div class="col-9"><input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-3">Length</div>
+                                    <div class="col-9"><input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-3">Featuring</div>
+                                    <div class="col-9"><input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-3">Live Track</div>
+                                    <div class="col-9"><input type="radio" aria-label="Radio button for following text input"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary"><ion-icon name="add-circle-outline"></ion-icon></button>
+                        <button type="button" class="btn tracklist-trash" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn tracklist-trash"><ion-icon name="add-circle-outline"></ion-icon></button>
                     </div>
 
                 </div>
             </div>
         </div>
         <!-- New Track modal end -->
-
+        <script>
+        </script>
         <!-- Optional JavaScript; choose one of the two! -->
 
         <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
