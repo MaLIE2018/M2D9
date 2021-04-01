@@ -79,11 +79,16 @@
         }
         
         .album-tracklist {
-            background-color: #000000;
+            background: linear-gradient(0deg, rgba(13, 14, 27, 1) 23%, rgba(7, 10, 43, 0.8323530095632002) 51%);
         }
         
         .tracklist-head-row {
             color: #B3B3B3;
+            font-size: 1.4em;
+        }
+        
+        .tracklist-row {
+            font-size: 1.2em;
         }
         
         .tracklist-hr {
@@ -116,16 +121,18 @@
 <body>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb mb-0" style="background-color: black;">
-            <li class="breadcrumb-item active text-white" aria-current="page">Home</li>
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="#album">Favorit albums</a>
+            </li>
         </ol>
     </nav>
     <div class="jumbotron jumbotron-fluid text-light">
-        <div class="container">
+        <div class="container ml-0 d-flex flex-column justify-content-start">
             <h1 class="display-4">Favorit albums of ME</h1>
             <p class="lead">Hey there, this is Maximilian. </p>
         </div>
     </div>
-    <div class="albums container-fluid">
+    <div class="albums container-fluid" id="album">
         <h1 class="albums-title">Favorit Albums</h1>
         <div class="row">
             <div class="col-12 mt-4">
@@ -141,38 +148,41 @@
                     </div>
 
                 </div>
-                <div class="row pl-5 py-3 m-0" style="height:3em; background: linear-gradient(0deg, rgba(13,14,27,1) 23%, rgba(7,10,43,1) 51%); "></div>
-                <div class="tracklist album-tracklist row d-flex flex-column pl-5 py-3 m-0">
-                    <div class="row mb-0">
-                        <div class="tracklist-head-row col-1 pl-5 align-items-center">#</div>
-                        <div class="tracklist-head-row col-8 align-items-center">TITLE</div>
-                        <div class="tracklist-head-row col flex-shrink-1 mr-5 d-flex justify-content-end align-items-center">
-                            <ion-icon name="alarm" class="mr-4"></ion-icon>
-                        </div>
-                    </div>
-                    <div class="col tracklist">
-                        <hr class="tracklist-hr">
-                    </div>
-                    <div class="row tracklist mt-4">
-                        <div class="col-1 align-items-center pl-5">test</div>
-                        <div class="col-8 align-items-center">Title</div>
-                        <div class="tracklist-head-row col flex-shrink-1 mr-4 d-flex justify-content-end align-items-center">00:00
-                            <button type="button" class="btn tracklist-trash ml-2"><ion-icon name="trash"></ion-icon></button>
-                        </div>
-                    </div>
-                    <div class="row tracklist">
-                        <div class="col-1 align-items-center pl-5">test</div>
-                        <div class="col-8 align-items-center">Title</div>
-                        <div class="tracklist-head-row col flex-shrink-1 mr-4 d-flex justify-content-end align-items-center">00:00
-                            <button type="button" class="btn tracklist-trash ml-2"><ion-icon name="trash"></ion-icon></button>
-                        </div>
-                    </div>
+                <div class="row px-0 py-0 m-0">
+                    <div class="position-absolute" style="width:100%;height:6em"></div>
                 </div>
-                <div class="tracklist album-tracklist row pl-5 py-3 m-0">
+                <div class="tracklist album-tracklist row d-flex flex-column pl-5 py-3 m-0">
+                    <div class="tracklist-rows">
+                        <div class="row mb-0">
+                            <div class="tracklist-head-row col-1 pl-5 align-items-center">#</div>
+                            <div class="tracklist-head-row col-8 align-items-center">TITLE</div>
+                            <div class="tracklist-head-row col flex-shrink-1 mr-5 d-flex justify-content-end align-items-center">
+                                <ion-icon name="alarm" class="mr-4"></ion-icon>
+                            </div>
+                        </div>
+                        <div class="col tracklist">
+                            <hr class="tracklist-hr">
+                        </div>
+                        <div class="row tracklist mt-4">
+                            <div class="tracklist-row col-1 align-items-center pl-5">test</div>
+                            <div class="tracklist-row col-8 align-items-center">Title</div>
+                            <div class="tracklist-row col flex-shrink-1 mr-4 d-flex justify-content-end align-items-center">00:00
+                                <button type="button" class="btn tracklist-trash ml-2"><ion-icon name="trash"></ion-icon></button>
+                            </div>
+                        </div>
+                        <div class="row tracklist">
+                            <div class="tracklist-row col-1 align-items-center pl-5">test</div>
+                            <div class="tracklist-row col-8 align-items-center">Title</div>
+                            <div class="tracklist-row col flex-shrink-1 mr-4 d-flex justify-content-end align-items-center">00:00
+                                <button type="button" class="btn tracklist-trash ml-2"><ion-icon name="trash"></ion-icon></button>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col d-flex justify-content-center"><button type="button" class="btn tracklist-trash" data-toggle="modal" data-target="#newTrack"><ion-icon name="add-circle-outline"></ion-icon></button></div>
                 </div>
 
             </div>
+
         </div>
         <!-- Contact Me Start -->
         <div class="container-fluid my-auto w-50 position-absolute" style="bottom: 30px; right:50%; transform:translateX(50%)">
@@ -195,27 +205,7 @@
             </div>
             <!-- Contact Me End -->
         </div>
-        <!-- footer start -->
-        <div class="modal" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Modal title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Modal body text goes here.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- footer end -->
+
         <!-- New Track modal start -->
         <div class="modal" id="newTrack" tabindex="-1">
             <div class="modal-dialog">
@@ -230,31 +220,31 @@
                         <div class="input-group">
                             <div class="container mb-3">
                                 <div class="row">
-                                    <div class="col-3">Number</div>
-                                    <div class="col-9"><input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></div>
+                                    <div class="col-3 my-2">Number</div>
+                                    <div class="col-9 my-2"><input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-3">Name</div>
-                                    <div class="col-9"><input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></div>
+                                    <div class="col-3 my-2">Name</div>
+                                    <div class="col-9 my-2"><input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-3">Length</div>
-                                    <div class="col-9"><input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></div>
+                                    <div class="col-3 my-2">Length</div>
+                                    <div class="col-9 my-2"><input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-3">Featuring</div>
-                                    <div class="col-9"><input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></div>
+                                    <div class="col-3 my-2">Featuring</div>
+                                    <div class="col-9 my-2"><input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-3">Live Track</div>
-                                    <div class="col-9"><input type="radio" aria-label="Radio button for following text input"></div>
+                                    <div class="col-3 my-2">Live Track</div>
+                                    <div class="col-9 my-2"><input type="radio" aria-label="Radio button for following text input"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn tracklist-trash" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn tracklist-trash"><ion-icon name="add-circle-outline"></ion-icon></button>
+                        <button type="button" class="btn tracklist-trash" onclick="addTrack()"><ion-icon name="add-circle-outline"></ion-icon></button>
                     </div>
 
                 </div>
@@ -262,6 +252,21 @@
         </div>
         <!-- New Track modal end -->
         <script>
+            const addTrack = () => {
+                let inputs = document.querySelectorAll(".modal-body input")
+
+
+                //inputs.forEach(input => {
+                document.querySelector(".tracklist-rows").innerHTML += `<div class="row tracklist">
+                        <div class="tracklist-row col-1 align-items-center pl-5">${inputs[0].value}</div>
+                        <div class="tracklist-row col-8 align-items-center">${inputs[1].value}</div>
+                        <div class="tracklist-row col flex-shrink-1 mr-4 d-flex justify-content-end align-items-center">${inputs[2].value}
+                            <button type="button" class="btn tracklist-trash ml-2"><ion-icon name="trash"></ion-icon></button>
+                        </div>
+                    </div>`
+                    //})
+
+            }
         </script>
         <!-- Optional JavaScript; choose one of the two! -->
 
